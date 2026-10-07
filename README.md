@@ -17,16 +17,18 @@ that reuse your leftovers, and can pair a wine with your dinner.
 
 ## How to use it
 
-Open the deployed app at **https://pantry-pal-git-727379569786.europe-west1.run.app** and type in the chat box (or click one
-of the sample prompts on the left). The agent remembers the conversation, so send these three
-queries in order in the same chat:
+Open the deployed app at **https://pantry-pal-git-727379569786.europe-west1.run.app**.
+
+Type in the chat box or click one of the sample prompts on the left. The agent remembers the conversation, so send these three queries in order in the same chat:
 
 1. `I'm craving something Italian for two, and I already have eggs and parmesan at home. What would it cost?`
 2. `Let's make the first one. What else can I cook with the leftovers?`
 3. `What wine goes with it, and how is my week looking so far?`
 
 Every tool the agent uses appears in the chat as a receipt strip. Click a strip to see exactly
-what it sent and what came back. "Start a new week" clears the conversation and your kitchen.
+what it sent and what came back.
+
+"Start a new week" in the top right clears the conversation and your kitchen.
 
 
 ## Notes and limitations
