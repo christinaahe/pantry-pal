@@ -450,6 +450,7 @@ def weekly_summary() -> dict:
 # food-pairing list against the dish. Free plan = 100 calls/day, so results are cached and
 # each use costs at most 1 search + 3 pairing lookups.
 WINEAPI = "https://api.wineapi.io"
+WINEAPI_KEY = os.environ["WINEAPI_KEY"]
 MAX_WINES = 3
 _STOPWORDS = {"and", "with", "the", "for", "from", "alla", "alle", "del", "della", "con"}
 _pairing_cache: dict = {}  # wine_id -> pairings list (shared across sessions)
@@ -467,7 +468,7 @@ def _words(text: str) -> set:
 
 
 def _wine_get(path: str, params: dict | None = None):
-    r = requests.get(f"{WINEAPI}{path}", headers={"X-API-Key": os.environ["WINEAPI_KEY"]},
+    r = requests.get(f"{WINEAPI}{path}", headers={"X-API-Key": WINEAPI_KEY},
                      params=params, timeout=15)
     r.raise_for_status()
     return r.json()
