@@ -33,9 +33,10 @@ what it sent and what came back.
 
 ## Notes and limitations
 
+- The free plan for the [wine API](https://wineapi.io/docs/) allows 100 calls per day, so a wine pairing request may fail if the limit is reached.
+- Prices are estimates from a subset of a [Trader Joe's price list](https://traderjoesprices.com/) which does not have every ingredient in all the recipes. Also, measures like "2 cloves" can't be converted, so those lines assume one whole package and are marked low confidence.
 - The recipe database doesn't say how many people a recipe serves, so amounts are scaled from an assumed 4 servings to the party size you ask for.
-- Prices are estimates from a subset of [this Trader Joe's price list](https://traderjoesprices.com/). Measures like "2 cloves" can't be
-  converted, so those lines assume one whole package and are marked low confidence.
+- Only full recipes can be added to your cart, not single ingredients.
 - Pantry matching is by word: "rice" covers "Basmati Rice", but "chicken" would also cover "Chicken Stock". The cost breakdown shows which of your items covered each ingredient. Each owned item is assumed to cover up to 2 more meals (one use per committed meal) unless you say otherwise; after that it is priced normally.
-- The wine database searches by wine name, winery, and appellation (not by food), so the agent picks a style and the tool verifies it against each wine's pairing list. The free plan allows 100 calls a day, so results are cached.
+- The wine database searches by wine name, winery, and appellation (not by food), so the agent picks a style and the tool verifies it against each wine's pairing list.
 - Sessions live in server memory, so a restart starts fresh conversations.
