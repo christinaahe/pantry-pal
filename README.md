@@ -17,7 +17,7 @@ that reuse your leftovers, and can pair a wine with your dinner.
 
 ## How to use it
 
-Open the deployed app at **https://REPLACE-ME.run.app** and type in the chat box (or click one
+Open the deployed app at **https://pantry-pal-git-727379569786.europe-west1.run.app** and type in the chat box (or click one
 of the sample prompts on the left). The agent remembers the conversation, so send these three
 queries in order in the same chat:
 
@@ -28,26 +28,8 @@ queries in order in the same chat:
 Every tool the agent uses appears in the chat as a receipt strip. Click a strip to see exactly
 what it sent and what came back. "Start a new week" clears the conversation and your kitchen.
 
-## Run locally
 
-Requires a GCP project with billing and the Agent Platform API enabled (older docs and the endpoint itself still call it Vertex AI)
-
-```bash
-gcloud auth application-default login     # lets LiteLLM call Vertex AI as you
-uv sync
-cp .env.example .env                      # add your VERTEXAI_PROJECT and WINEAPI_KEY
-uv run --env-file .env uvicorn app:app --reload --port 8080
-```
-
-Open http://localhost:8080.
-
-## API
-
-`POST /chat` with `{"message": "...", "session_id": "optional"}` returns
-`{"response": "...", "session_id": "...", "tool_calls": [{"name", "args", "result"}]}`.
-`POST /clear?session_id=...` forgets a session.
-
-## Notes and limits
+## Notes and limitations
 
 - The recipe database doesn't say how many people a recipe serves, so amounts are scaled from an assumed 4 servings to the party size you ask for.
 - Prices are estimates from a subset of [this Trader Joe's price list](https://traderjoesprices.com/). Measures like "2 cloves" can't be
